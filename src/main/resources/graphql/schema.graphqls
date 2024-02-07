@@ -1,0 +1,24 @@
+type Student {
+    id: ID!,
+    name: String
+    email: String
+    password: String
+}
+
+type Query {
+    allStudent: [Student]!
+    findOne(id: ID!): Student
+}
+
+type Mutation {
+    addOne(name: String,email: String , password: String): Student!
+    deleteOne(id: ID!): Student
+    updateOne(student: UpdateStudent): Student
+}
+
+input UpdateStudent {
+    id: ID!
+    name: String
+    email: String
+    password: String
+}
